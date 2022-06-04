@@ -3,7 +3,7 @@ import psycopg2
 
 app = Flask(__name__)
 # Connecting to an existing database
-conn = psycopg2.connect("dbname='d1gf9b3pqlgcq0' user='qzxdifbdohxckk' host='dfd314c47f7dcf87c1f2781d19e18643dc886918b6fd8d07e90efa026b644d8d' port='5432'")
+conn = psycopg2.connect("dbname='d1gf9b3pqlgcq0' user='qzxdifbdohxckk' host='ec2-54-77-40-202.eu-west-1.compute.amazonaws.com' password='dfd314c47f7dcf87c1f2781d19e18643dc886918b6fd8d07e90efa026b644d8d' port='5432'")
 cur = conn.cursor()
 cur.execute('CREATE TABLE IF NOT EXISTS Products(id serial,name varchar(255),bp int,SP int,serial_no varchar(255))')
 cur.execute('CREATE TABLE IF NOT EXISTS Sales(id serial,product_id serial,quantity int,created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW())')
